@@ -15,19 +15,12 @@ except ImportError:
     pass
 
 class CoupangBot:
-    """
-    쿠팡 Ultimate Stealth 봇
-    - Undetected-Chromedriver (UC) 사용: 각종 봇 탐지 우회
-    - Human-like Mouse Movement: 베지에 곡선 이동 시뮬레이션
-    - Residential Proxy Support: 프록시 설정 포함
-    """
     def __init__(self):
         print("▶ [Stealth] Undetected Chrome 실행 준비 중...")
         
         # 1. 크롬 옵션 설정
         options = uc.ChromeOptions()
         
-        # [중요] 봇 탐지 방지 옵션들
         options.add_argument('--no-first-run')
         options.add_argument('--no-service-autorun')
         options.add_argument('--password-store=basic')
@@ -35,6 +28,10 @@ class CoupangBot:
         
         # [Session Persistence] 쿠키/세션 저장소 설정
         profile_path = os.path.join(os.getcwd(), 'bot_profile')
+
+        if not os.path.exists(profile_path):
+            os.makedirs(profile_path)
+
         options.add_argument(f'--user_data_dir={profile_path}')
         print(f"▶ [설정] 프로필 경로: {profile_path}")
 

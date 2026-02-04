@@ -1,0 +1,4 @@
+undetected-chromedriver>=3.5.0
+selenium
+opencv-python
+numpy

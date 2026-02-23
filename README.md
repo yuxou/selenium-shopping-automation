@@ -1,4 +1,4 @@
-# 🛒 Selenium Shopping Automation (KR)
+# Selenium Shopping Automation (KR)
 
 파이썬과 Selenium, 그리고 OpenCV를 활용한 **쿠팡(Coupang) 자동 구매 봇**입니다.  
 봇 탐지를 우회하는 **Stealth 기술**과 보안 키패드 입력을 위한 **이미지 매칭** 기술이 적용되어 있습니다.
@@ -30,7 +30,7 @@
 
 ---
 
-## 🛠️ 설치 방법 (Installation)
+## 설치 방법 (Installation)
 
 ### 1. 환경 설정
 *   **Python**: 3.9 이상 권장
@@ -64,7 +64,7 @@ self.driver = uc.Chrome(options=options, version_main=144)
 
 ---
 
-## ⚙️ 설정 (Configuration)
+## 설정 (Configuration)
 
 `shopping_bot.py` 파일을 열어 아래 **[설정]** 부분을 본인의 정보에 맞게 수정하세요.
 
@@ -92,7 +92,7 @@ self.pay_with_password("123456")
 
 ---
 
-## 🚀 사용 방법 (Usage)
+## 사용 방법 (Usage)
 
 터미널에서 아래 명령어로 스크립트를 실행합니다.
 
@@ -107,7 +107,7 @@ python shopping_bot.py
   
 ---
 
-## 🐛 디버깅 이미지 설명 (Debug Screenshots)
+## 디버깅 이미지 설명 (Debug Screenshots)
 
 스크립트 실행 중 오류가 발생하면, 원인 파악을 위해 자동으로 **스크린샷(.png)**이 생성됩니다.
 
@@ -123,7 +123,7 @@ python shopping_bot.py
 
 ---
 
-## ⚠️ 문제 해결 (Troubleshooting)
+## 문제 해결 (Troubleshooting)
 
 ### Q. IP 차단 (Access Denied)
 *   사이트의 보안 정책에 의해 IP가 일시적으로 차단된 경우입니다.

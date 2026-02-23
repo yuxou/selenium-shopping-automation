@@ -77,7 +77,7 @@ class CoupangBot:
         
         # 0. Access Denied 선제 체크
         if "Access Denied" in self.driver.page_source:
-             print("❌ [차단됨] 메인 페이지 진입 즉시 Access Denied 발생.")
+             print("[차단됨] 메인 페이지 진입 즉시 Access Denied 발생.")
              return False
 
         # 1. 메인 로그인 버튼 찾기 (다중 선택자)
@@ -236,7 +236,7 @@ class CoupangBot:
         if success:
            print("  JS 검색 성공")
         else:
-           print("❌ 검색 완전 실패 (URL 이동은 위험해서 하지 않음)")
+           print("검색 완전 실패 (URL 이동은 위험해서 하지 않음)")
 
     def select_first_product(self, target_keyword):
         print(f"▶ 상품 탐색 중... ('{target_keyword}' 포함 제품)")
@@ -281,11 +281,11 @@ class CoupangBot:
                 print("  상세 페이지 이동 완료")
                 time.sleep(3)
             else:
-                print("  ❌ 상품을 찾을 수 없습니다. (스크린샷: error_no_product.png)")
+                print("  상품을 찾을 수 없습니다. (스크린샷: error_no_product.png)")
                 self.driver.save_screenshot('error_no_product.png')
 
         except Exception as e:
-            print(f"❌ 상품 선택 실패: {e}")
+            print(f"상품 선택 실패: {e}")
 
     def buy_now(self):
         print("▶ 바로구매 시도... (JS Polling)")
@@ -309,10 +309,10 @@ class CoupangBot:
                 print("  바로구매 버튼 클릭 성공 (JS)")
                 time.sleep(2)
             else:
-                 print("❌ 바로구매 버튼 없음 (스크린샷: error_buy_now.png)")
+                 print("바로구매 버튼 없음 (스크린샷: error_buy_now.png)")
                  self.driver.save_screenshot('error_buy_now.png')
         except Exception as e:
-             print(f"❌ 바로구매 에러: {e}")
+             print(f"바로구매 에러: {e}")
 
     def pay_final(self):
         print("▶ 결제하기 시도... (JS Polling)")
@@ -333,10 +333,10 @@ class CoupangBot:
                 print("  결제하기 버튼 클릭 성공 (JS)")
                 time.sleep(3)
             else:
-                 print("❌ 결제하기 버튼 못 찾음 (스크린샷: error_pay.png)")
+                 print("결제하기 버튼 못 찾음 (스크린샷: error_pay.png)")
                  self.driver.save_screenshot('error_pay.png')
         except Exception as e:
-             print(f"❌ 결제하기 에러: {e}")
+             print(f"결제하기 에러: {e}")
 
     def pay_with_password(self, password):
         print(f"▶ 결제 비밀번호 입력 시도 ({len(password)}자리)")
